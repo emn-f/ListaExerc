@@ -42,7 +42,7 @@ public class ItensPedido {
 
     @Override
     public String toString() {
-        return produto.toString() +", Quantidade: " + quantidade + ", Subtotal: " + subTotal() + "\n";
+        return produto.toString() + ", Quantidade: " + quantidade + ", Subtotal: " + subTotal() + "\n";
     }
 
 }
