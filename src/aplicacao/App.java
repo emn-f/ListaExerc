@@ -32,8 +32,10 @@ public class App {
         System.out.println("Informe os dados do cliente:");
         System.out.print("Nome: ");
         nomeCliente = in.nextLine();
+
         System.out.print("Email: ");
         emailCliente = in.nextLine();
+
         System.out.print("Data de Nascimento (DD/MM/YYYY): ");
         getNasc = LocalDate.parse(in.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         nascimento = Date.from(getNasc.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -47,19 +49,21 @@ public class App {
         in.nextLine();
 
         for (int i = 0; i < n; i++) {
+            
             System.out.println("Informe os dados do item " + (i + 1) + ":");
             System.out.print("Nome do produto: ");
             nomeItem = in.nextLine();
+            
             System.out.print("Preço do produto: ");
             precoItem = in.nextDouble();
             in.nextLine();
+
             System.out.print("Quantidade: ");
             quantProduto = in.nextInt();
             in.nextLine();
 
             produto.add(new Produto(nomeItem, precoItem));
             itens.add(new ItensPedido(quantProduto, precoItem, produto.get(i)));
-
         }
 
         pedido.add(new Pedido(new Date(), StatusPedido.valueOf(statusPedido), itens, cliente.get(0)));
